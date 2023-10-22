@@ -1,5 +1,5 @@
 type Category {
-    id: ID
+    id: String!
     key: String!
     is_active: Boolean
     slug: String
@@ -36,7 +36,7 @@ input CreateCategoryInput {
 }
 
 input UpdateCategoryInput {
-    id: ID!
+    id: String!
     key: String!
     is_active: Boolean
     value: String!
