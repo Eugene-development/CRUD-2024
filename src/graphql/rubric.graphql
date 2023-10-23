@@ -1,6 +1,6 @@
 type Rubric {
-    id: ID
-    key: String!
+    id: UUID!
+    key: UUID!
     is_active: Boolean
     slug: String
     value: String!
@@ -12,33 +12,34 @@ type Rubric {
 }
 
 extend type Query {
-    rubric(key: String @eq): [Rubric] @all
-    rubric_one(slug: String! @eq, key: String! @eq): Rubric @find
+    rubric(key: UUID @eq): [Rubric] @all
+    rubric_one(slug: String! @eq, key: UUID! @eq): Rubric @find
 }
 
 extend type Mutation {
     createRubric(input: CreateRubricInput @spread): Rubric @create
     updateRubric(input: UpdateRubricInput @spread): Rubric @update
-    deleteRubric(id: ID! @whereKey): Rubric @delete
+    deleteRubric(id: UUID! @whereKey): Rubric @delete
 }
 
 input CreateRubricInput {
-    key: String!
+    id: UUID!
+    key: UUID!
     is_active: Boolean
     value: String!
     slug: String
     parentable_type: String
-    parentable_id: Int!
+    parentable_id: UUID
     # property: CreatePropertyMorphMany
 }
 
 input UpdateRubricInput {
-    id: ID!
+    id: UUID!
     key: String!
     is_active: Boolean
     value: String!
     slug: String
     parentable_type: String
-    parentable_id: Int
+    parentable_id: UUID
     # property: UpdatePropertyMorphMany
 }

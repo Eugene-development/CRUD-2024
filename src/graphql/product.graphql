@@ -1,6 +1,6 @@
 type Product {
-    id: ID
-    key: String!
+    id: UUID!
+    key: UUID!
     is_active: Boolean
     slug: String
     value: String!
@@ -14,38 +14,39 @@ type Product {
 }
 
 extend type Query {
-    product(key: String @eq): [Product] @all
-    product_one(slug: String! @eq, key: String! @eq): Product @find
-    product_price(key: String @eq): [Product] @all
+    product(key: UUID @eq): [Product] @all
+    product_one(slug: String! @eq, key: UUID! @eq): Product @find
+    product_price(key: UUID @eq): [Product] @all
     # product_cart(id: ID @eq): [Product] @all
 }
 
 extend type Mutation {
     createProduct(input: CreateProductInput @spread): Product @create
     updateProduct(input: UpdateProductInput @spread): Product @update
-    deleteProduct(id: ID! @whereKey): Product @delete
+    deleteProduct(id: UUID! @whereKey): Product @delete
 }
 
 input CreateProductInput {
-    key: String!
-    # is_active: Boolean
+    id: UUID!
+    key: UUID!
+    is_active: Boolean
     value: String!
     slug: String
     parentable_type: String
-    parentable_id: Int!
+    parentable_id: UUID!
     price: CreatePriceMorphMany
     unit: CreateUnitMorphMany
     image: CreateImageMorphMany
 }
 
 input UpdateProductInput {
-    id: ID!
-    key: String!
+    id: UUID!
+    key: UUID!
     is_active: Boolean
     value: String!
     slug: String
     parentable_type: String
-    parentable_id: Int
+    parentable_id: UUID
     price: UpdatePriceMorphMany
 }
 

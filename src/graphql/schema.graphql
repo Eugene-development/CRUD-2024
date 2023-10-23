@@ -34,3 +34,5 @@ union Parentable =
     | SeoQuery
     | SeoTitle
     | SeoDescription
+
+scalar UUID

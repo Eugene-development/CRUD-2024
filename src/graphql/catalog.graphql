@@ -1,6 +1,6 @@
 type Catalog {
-    id: ID
-    key: String!
+    id: UUID!
+    key: UUID!
     is_active: Boolean
     slug: String
     value: String
@@ -12,33 +12,34 @@ type Catalog {
 }
 
 extend type Query {
-    catalog(key: String! @eq): [Catalog] @all
-    catalog_one(slug: String! @eq, key: String! @eq): Catalog @find
+    catalog(key: UUID! @eq): [Catalog] @all
+    catalog_one(slug: String! @eq, key: UUID! @eq): Catalog @find
 }
 
 extend type Mutation {
     createCatalog(input: CreateCatalogInput @spread): Catalog @create
     updateCatalog(input: UpdateCatalogInput @spread): Catalog @update
-    deleteCatalog(id: ID! @whereKey): Catalog @delete
+    deleteCatalog(id: UUID! @whereKey): Catalog @delete
 }
 
 input CreateCatalogInput {
-    key: String!
+    id: UUID!
+    key: UUID!
     is_active: Boolean
     value: String!
     slug: String
     parentable_type: String
-    parentable_id: Int
+    parentable_id: UUID
     # property: CreatePropertyMorphMany
 }
 
 input UpdateCatalogInput {
-    id: ID!
-    key: String!
+    id: UUID!
+    key: UUID!
     is_active: Boolean
     value: String!
     slug: String
     parentable_type: String
-    parentable_id: Int
+    parentable_id: UUID
     # property: UpdatePropertyMorphMany
 }

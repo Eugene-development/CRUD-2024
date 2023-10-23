@@ -1,8 +1,6 @@
-scalar UUID
-
 type Category {
     id: UUID!
-    key: String!
+    key: UUID!
     is_active: Boolean
     slug: String
     value: String!
@@ -16,10 +14,9 @@ type Category {
 }
 
 extend type Query {
-    # category(): [Category] @all
-    category(key: String @eq): [Category] @all
-    category_one(slug: String! @eq, key: String! @eq): Category @find
-    category_one_id(id: ID! @eq, key: String! @eq): Category @find
+    category(key: UUID @eq): [Category] @all
+    category_one(slug: String! @eq, key: UUID! @eq): Category @find
+    category_one_id(id: UUID! @eq, key: String! @eq): Category @find
 }
 
 extend type Mutation {
@@ -30,22 +27,22 @@ extend type Mutation {
 
 input CreateCategoryInput {
     id: UUID!
-    key: String!
+    key: UUID!
     is_active: Boolean
     value: String!
     slug: String
     parentable_type: String
-    parentable_id: Int!
+    parentable_id: UUID
 }
 
 input UpdateCategoryInput {
     id: UUID!
-    key: String!
+    key: UUID!
     is_active: Boolean
     value: String!
     slug: String
     parentable_type: String
-    parentable_id: Int
+    parentable_id: UUID
     seoTitle: UpdateSeoTitleMorphOne
     seoDescription: UpdateSeoDescriptionMorphOne
 }
