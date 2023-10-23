@@ -1,10 +1,10 @@
 type Position {
-    id: ID
-    key: String
+    id: UUID!
+    key: UUID
     value: Int
     created_at: String
-    parentable_type: String
-    parentable_id: String
+    # parentable_type: String
+    # parentable_id: String
     parentable: Parentable! @morphTo
 }
 

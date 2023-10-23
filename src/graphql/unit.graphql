@@ -1,10 +1,10 @@
 type Unit {
-    id: ID
-    key: String
+    id: UUID!
+    key: UUID
     active: Boolean
     value: String
-    parentable_type: String
-    parentable_id: String
+    # parentable_type: String
+    # parentable_id: UUID
     parentable: Parentable! @morphTo
 }
 
@@ -17,7 +17,8 @@ extend type Mutation {
 }
 
 input CreateUnitInput {
-    key: String!
+    id: UUID!
+    key: UUID!
     value: String!
 }
 

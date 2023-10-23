@@ -1,11 +1,11 @@
 type Property {
-    id: ID
-    key: String
+    id: UUID!
+    key: UUID
     active: Boolean
     value: String
     slug: String
-    parentable_type: String
-    parentable_id: String
+    # parentable_type: String
+    # parentable_id: String
     parentable: Product @morphTo
 }
 
@@ -21,6 +21,7 @@ input CreatePropertyMorphMany {
     create: [CreatePropertyInput]
 }
 input CreatePropertyInput {
+    id: UUID!
     key: String!
     value: String!
     slug: String!
@@ -29,9 +30,9 @@ input CreatePropertyInput {
 input UpdatePropertyMorphMany {
     create: [CreatePropertyInput]
     update: [UpdatePropertyInput]
-    delete: [ID!]
+    delete: [UUID!]
 }
 input UpdatePropertyInput {
-    id: ID!
+    id: UUID!
     value: String!
 }

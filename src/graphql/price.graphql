@@ -1,6 +1,6 @@
 type Price {
-    id: ID
-    key: String
+    id: UUID!
+    key: UUID
     active: Boolean
     value: Int
     parentable: Parentable! @morphTo
@@ -10,13 +10,19 @@ extend type Query {
     price: Price @all
 }
 
+extend type Mutation {
+    createPrice(input: CreatePriceInput @spread): Price @create
+    updatePrice(input: UpdatePriceInput @spread): Price @update
+}
+
 input CreatePriceInput {
-    key: String!
+    id: UUID!
+    key: UUID!
     value: String!
 }
 
 input UpdatePriceInput {
-    id: ID!
+    id: UUID!
     key: String!
     value: String!
 }
@@ -27,8 +33,4 @@ input CreatePriceMorphMany {
 
 input UpdatePriceMorphMany {
     update: UpdatePriceInput!
-}
-extend type Mutation {
-    createPrice(input: CreatePriceInput @spread): Price @create
-    updatePrice(input: UpdatePriceInput @spread): Price @update
 }

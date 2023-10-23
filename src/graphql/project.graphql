@@ -1,6 +1,6 @@
 type Project {
-    id: ID
-    key: String
+    id: UUID!
+    key: UUID
     value: String
     resource: [Resource!] @morphMany
     seoQuery: [SeoQuery!] @morphMany

@@ -1,6 +1,6 @@
 type Text {
-    id: ID
-    key: String
+    id: UUID!
+    key: UUID
     active: Boolean
     value: String
     parentable_type: String
@@ -17,7 +17,8 @@ extend type Mutation {
 }
 
 input CreateTextInput {
-    key: String!
+    id: UUID!
+    key: UUID!
     value: String!
     slug: String
 }

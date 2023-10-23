@@ -1,6 +1,6 @@
 type Resource {
-    id: ID
-    key: String
+    id: UUID!
+    key: UUID
     value: String
     seoQuery: [SeoQuery!] @morphMany
     position: [Position!] @morphMany
