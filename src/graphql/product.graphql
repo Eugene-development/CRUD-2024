@@ -9,6 +9,7 @@ type Product {
     price: Price @morphOne
     unit: Unit @morphOne
     text: [Text] @morphMany
+    tag: [Tag] @morphMany
     image: Image @morphOne
     parentable: Parentable @morphTo
 }

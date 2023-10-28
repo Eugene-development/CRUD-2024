@@ -8,6 +8,7 @@
 #import price.graphql
 #import unit.graphql
 #import text.graphql
+#import tag.graphql
 #import image.graphql
 #import resource.graphql
 #import position.graphql
@@ -27,6 +28,7 @@ union Parentable =
     | Price
     | Unit
     | Text
+    | Tag
     | Image
     | Resource
     | Position

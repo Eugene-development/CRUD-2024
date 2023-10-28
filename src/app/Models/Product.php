@@ -38,6 +38,11 @@ class Product extends RootModel
         return $this->morphOne(Image::class, 'parentable');
     }
 
+    public function tag()
+    {
+        return $this->morphToMany(Tag::class, 'taggable')->withTimestamps();
+    }
+
     public function parentable(): MorphTo
     {
         return $this->morphTo();
