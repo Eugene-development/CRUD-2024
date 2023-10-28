@@ -6,8 +6,9 @@ type Tag {
     value: String!
     created_at: String
     updated_at: String
-    # taggable: Taggable @morphTo
+    # taggable: Taggable @morphToMany
     # parentable: Parentable! @morphTo
+    product: [Product] @morphMany
 }
 
 extend type Query {
