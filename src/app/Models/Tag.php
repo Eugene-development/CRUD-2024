@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 
-class Tag extends Model
+class Tag extends RootModel
 {
-    use HasFactory;
+
 
     protected $guarded = [];
 
