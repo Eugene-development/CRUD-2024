@@ -13,7 +13,7 @@ class Tag extends Model
 
     protected $table = 'tag';
 
-    public function product()
+    public function taggable()
     {
         return $this->morphedByMany(Product::class, 'taggable')->withTimestamps();
     }

@@ -6,7 +6,7 @@ type Tag {
     value: String!
     created_at: String
     updated_at: String
-    # product: taggable @morphTo
+    # taggable: Taggable @morphTo
     # parentable: Parentable! @morphTo
 }
 

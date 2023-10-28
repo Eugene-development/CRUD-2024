@@ -48,6 +48,7 @@ class AppServiceProvider extends ServiceProvider
             'seodescription' => 'App\Models\Seodescription',
             'seotitle' => 'App\Models\Seotitle',
             'service' => 'App\Models\Service',
+            'tag' => 'App\Models\Tag',
             'team' => 'App\Models\Team',
             'text' => 'App\Models\Text',
             'title' => 'App\Models\Title',
