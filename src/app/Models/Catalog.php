@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 class Catalog extends RootModel
 {
 
-    protected $guarded = [];
-
     protected $table = 'catalog';
 
     public function rubric(): MorphMany

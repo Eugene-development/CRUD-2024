@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class File extends RootModel
 {
-    protected $guarded = [];
 
     protected $table = 'file';
 

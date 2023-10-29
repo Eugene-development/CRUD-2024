@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 class Mail extends RootModel
 {
 
-    protected $guarded = [];
-
     protected $table = 'mail';
 
     public function parentable(): MorphTo

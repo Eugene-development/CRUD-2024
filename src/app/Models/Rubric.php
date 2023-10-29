@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 class Rubric extends RootModel
 {
 
-    protected $guarded = [];
-
     protected $table = 'rubric';
 
     public function category(): MorphMany

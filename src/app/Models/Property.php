@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 class Property extends RootModel
 {
 
-    protected $guarded = [];
-
     protected $table = 'property';
 
     //    protected $primaryKey = 'uuid';

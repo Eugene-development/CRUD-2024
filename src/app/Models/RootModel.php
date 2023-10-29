@@ -14,6 +14,8 @@ class RootModel extends Model
     use HasFactory;
     use HasUuids;
 
+    protected $guarded = [];
+
     // public function getConnection()
     // {
     //     // Определите подключение на основе запроса

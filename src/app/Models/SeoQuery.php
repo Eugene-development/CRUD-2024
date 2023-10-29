@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class SeoQuery extends RootModel
 {
-    protected $guarded = [];
 
     protected $table = 'seoquery';
 

@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 class Resource extends RootModel
 {
 
-    protected $guarded = [];
-
     protected $table = 'resource';
 
     public function position(): MorphMany

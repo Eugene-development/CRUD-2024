@@ -9,8 +9,6 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 class Product extends RootModel
 {
 
-    protected $guarded = [];
-
     protected $table = 'product';
 
     public function property(): MorphMany

@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 class Position extends RootModel
 {
 
-    protected $guarded = [];
-
     protected $table = 'position';
 
     public function parentable(): MorphTo

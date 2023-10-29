@@ -7,8 +7,6 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 class Menu extends RootModel
 {
 
-    protected $guarded = [];
-
     protected $table = 'menu';
 
     public function parentable(): MorphTo

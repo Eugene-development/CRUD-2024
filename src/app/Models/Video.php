@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Video extends RootModel
 {
-    protected $guarded = [];
 
     protected $table = 'video';
 

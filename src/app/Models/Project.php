@@ -8,8 +8,6 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 class Project extends RootModel
 {
 
-    protected $guarded = [];
-
     protected $table = 'project';
 
     public function seoquery(): MorphMany

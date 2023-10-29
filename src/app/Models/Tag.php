@@ -11,18 +11,10 @@ use Illuminate\Database\Eloquent\Relations\MorphToMany;
 class Tag extends RootModel
 {
 
-
-    protected $guarded = [];
-
     protected $table = 'tag';
 
     public function product(): MorphToMany
     {
         return $this->morphedByMany(Product::class, 'taggable')->withTimestamps();
     }
-
-    // public function parentable(): MorphToMany
-    // {
-    //     return $this->morphToMany();
-    // }
 }

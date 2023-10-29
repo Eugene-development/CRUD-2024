@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Team extends RootModel
 {
-    protected $guarded = [];
 
     protected $table = 'team';
 

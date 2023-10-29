@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Unit extends RootModel
 {
-    protected $guarded = [];
 
     protected $table = 'unit';
 
