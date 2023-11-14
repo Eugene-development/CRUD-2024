@@ -17,4 +17,9 @@ class Tag extends RootModel
     {
         return $this->morphedByMany(Product::class, 'taggable')->withTimestamps();
     }
+
+    public function parentable(): MorphTo
+    {
+        return $this->morphTo();
+    }
 }

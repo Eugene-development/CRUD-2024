@@ -7,6 +7,7 @@ type Category {
     created_at: String
     updated_at: String
     product: [Product] @morphMany
+    tag: [Tag] @morphMany
     text: [Text] @morphMany
     seoTitle: SeoTitle @morphOne
     seoDescription: SeoDescription @morphOne
@@ -14,9 +15,10 @@ type Category {
 }
 
 extend type Query {
-    category(key: UUID @eq): [Category] @all
-    category_one(slug: String! @eq, key: UUID! @eq): Category @find
-    category_one_id(id: UUID! @eq, key: String! @eq): Category @find
+    category(
+        key: UUID @eq
+        orderBy: _ @orderBy(columns: ["created_at"])
+    ): [Category] @all
 }
 
 extend type Mutation {

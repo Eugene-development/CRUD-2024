@@ -11,6 +11,11 @@ class Category extends RootModel
 
     protected $table = 'category';
 
+    public function tag(): MorphMany
+    {
+        return $this->morphMany(Tag::class, 'parentable');
+    }
+
     public function product(): MorphMany
     {
         return $this->morphMany(Product::class, 'parentable');
