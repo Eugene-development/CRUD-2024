@@ -11,7 +11,7 @@ type Category {
     text: [Text] @morphMany
     seoTitle: SeoTitle @morphOne
     seoDescription: SeoDescription @morphOne
-    parentable: Parentable! @morphTo
+    parentable: Parentable @morphTo
 }
 
 extend type Query {

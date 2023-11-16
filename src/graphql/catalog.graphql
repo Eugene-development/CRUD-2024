@@ -8,7 +8,7 @@ type Catalog {
     updated_at: String
     rubric: [Rubric] @morphMany
     text: [Text] @morphMany
-    parentable: Parentable! @morphTo
+    parentable: Parentable @morphTo
 }
 
 extend type Query {

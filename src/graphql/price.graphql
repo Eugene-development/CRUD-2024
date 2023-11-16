@@ -3,7 +3,7 @@ type Price {
     key: UUID
     active: Boolean
     value: Int
-    parentable: Parentable! @morphTo
+    parentable: Parentable @morphTo
 }
 
 extend type Query {

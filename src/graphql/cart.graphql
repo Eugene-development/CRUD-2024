@@ -3,7 +3,7 @@ type Cart {
     key: String!
     session_user: String
     product_id: String
-    # parentable: Parentable! @morphTo
+    # parentable: Parentable @morphTo
 }
 
 extend type Query {
