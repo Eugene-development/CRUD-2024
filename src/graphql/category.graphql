@@ -24,7 +24,7 @@ extend type Query {
 extend type Mutation {
     createCategory(input: CreateCategoryInput @spread): Category @create
     updateCategory(input: UpdateCategoryInput @spread): Category @update
-    deleteCategory(id: UUID! @whereKey): Category @delete
+    deleteCategory(id: UUID! @whereKey): Category @forceDelete
 }
 
 input CreateCategoryInput {
@@ -47,6 +47,6 @@ input UpdateCategoryInput {
     slug: String
     parentable_type: String
     parentable_id: UUID
-    # seoTitle: UpdateSeoTitleMorphOne
-    # seoDescription: UpdateSeoDescriptionMorphOne
+    seoTitle: UpdateSeoTitleMorphOne
+    seoDescription: UpdateSeoDescriptionMorphOne
 }

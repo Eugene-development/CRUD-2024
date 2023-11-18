@@ -1,6 +1,6 @@
 type SeoDescription {
-    id: ID
-    key: String
+    id: UUID
+    key: UUID
     is_active: Boolean
     value: String
     parentable: Parentable @morphTo
@@ -11,14 +11,14 @@ extend type Query {
 }
 
 input CreateSeoDescriptionInput {
-    key: String!
+    key: UUID!
     value: String!
 }
 
 input UpdateSeoDescriptionInput {
-    id: ID!
-    key: String!
-    value: String!
+    id: UUID
+    key: UUID
+    value: String
 }
 
 input CreateSeoDescriptionMorphOne {
