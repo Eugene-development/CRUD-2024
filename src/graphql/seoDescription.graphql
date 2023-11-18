@@ -21,7 +21,7 @@ input UpdateSeoDescriptionInput {
     value: String!
 }
 
-input CreateSeoDescriptionMorphMany {
+input CreateSeoDescriptionMorphOne {
     create: CreateSeoDescriptionInput!
 }
 

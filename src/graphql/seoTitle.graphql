@@ -21,7 +21,7 @@ input UpdateSeoTitleInput {
     value: String!
 }
 
-input CreateSeoTitleMorphMany {
+input CreateSeoTitleMorphOne {
     create: CreateSeoTitleInput!
 }
 

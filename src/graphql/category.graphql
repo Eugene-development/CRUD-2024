@@ -17,7 +17,7 @@ type Category {
 extend type Query {
     category(
         key: UUID @eq
-        orderBy: _ @orderBy(columns: ["created_at"])
+        orderBy: _ @orderBy(columns: ["value"])
     ): [Category] @all
 }
 
@@ -35,6 +35,8 @@ input CreateCategoryInput {
     slug: String
     parentable_type: String
     parentable_id: UUID
+    seoTitle: CreateSeoTitleMorphOne
+    seoDescription: CreateSeoDescriptionMorphOne
 }
 
 input UpdateCategoryInput {
@@ -45,6 +47,6 @@ input UpdateCategoryInput {
     slug: String
     parentable_type: String
     parentable_id: UUID
-    seoTitle: UpdateSeoTitleMorphOne
-    seoDescription: UpdateSeoDescriptionMorphOne
+    # seoTitle: UpdateSeoTitleMorphOne
+    # seoDescription: UpdateSeoDescriptionMorphOne
 }

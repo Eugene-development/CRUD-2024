@@ -12,7 +12,8 @@ type Rubric {
 }
 
 extend type Query {
-    rubric(key: UUID @eq): [Rubric] @all
+    rubric(key: UUID @eq, orderBy: _ @orderBy(columns: ["value"])): [Rubric]
+        @all
     rubric_one(slug: String! @eq, key: UUID! @eq): Rubric @find
 }
 
