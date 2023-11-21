@@ -31,6 +31,12 @@ class Category extends RootModel
         return $this->morphOne(SeoTitle::class, 'parentable');
     }
 
+    // Test
+    public function testcategory(): MorphMany
+    {
+        return $this->morphMany(Category::class, 'parentable');
+    }
+
     public function seoDescription(): MorphOne
     {
         return $this->morphOne(SeoDescription::class, 'parentable');

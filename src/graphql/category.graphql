@@ -12,13 +12,16 @@ type Category {
     seoTitle: SeoTitle @morphOne
     seoDescription: SeoDescription @morphOne
     parentable: Parentable @morphTo
+
+    testcategory: [Category]
+        @morphMany
+        @eq(key: "parentable_type", value: "category")
 }
 
 extend type Query {
-    category(
-        key: UUID @eq
-        orderBy: _ @orderBy(columns: ["value"])
-    ): [Category] @all
+    category(orderBy: _ @orderBy(columns: ["value"])): [Category]
+        @all
+        @eq(key: "parentable_type", value: "rubric")
 }
 
 extend type Mutation {
