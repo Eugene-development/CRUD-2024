@@ -41,6 +41,17 @@ class Product extends RootModel
         return $this->morphToMany(Tag::class, 'taggable')->withTimestamps();
     }
 
+    public function seoTitle(): MorphOne
+    {
+        return $this->morphOne(SeoTitle::class, 'parentable');
+    }
+
+    public function seoDescription(): MorphOne
+    {
+        return $this->morphOne(SeoDescription::class, 'parentable');
+    }
+
+
     public function parentable(): MorphTo
     {
         return $this->morphTo();

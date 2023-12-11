@@ -8,6 +8,8 @@ type Rubric {
     updated_at: String
     category: [Category] @morphMany
     text: [Text] @morphMany
+    seoTitle: SeoTitle @morphOne
+    seoDescription: SeoDescription @morphOne
     parentable: Parentable @morphTo
 }
 
@@ -20,7 +22,7 @@ extend type Query {
 extend type Mutation {
     createRubric(input: CreateRubricInput @spread): Rubric @create
     updateRubric(input: UpdateRubricInput @spread): Rubric @update
-    deleteRubric(id: UUID! @whereKey): Rubric @delete
+    deleteRubric(id: UUID! @whereKey): Rubric @forceDelete
 }
 
 input CreateRubricInput {
@@ -31,16 +33,18 @@ input CreateRubricInput {
     slug: String
     parentable_type: String
     parentable_id: UUID
-    # property: CreatePropertyMorphMany
+    seoTitle: CreateSeoTitleMorphOne
+    seoDescription: CreateSeoDescriptionMorphOne
 }
 
 input UpdateRubricInput {
     id: UUID!
-    key: String!
+    key: UUID!
     is_active: Boolean
     value: String!
     slug: String
     parentable_type: String
     parentable_id: UUID
-    # property: UpdatePropertyMorphMany
+    seoTitle: UpdateSeoTitleMorphOne
+    seoDescription: UpdateSeoDescriptionMorphOne
 }
