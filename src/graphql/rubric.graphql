@@ -22,7 +22,7 @@ extend type Query {
 extend type Mutation {
     createRubric(input: CreateRubricInput @spread): Rubric @create
     updateRubric(input: UpdateRubricInput @spread): Rubric @update
-    deleteRubric(id: UUID! @whereKey): Rubric @forceDelete
+    deleteRubric(id: UUID! @whereKey): Rubric @delete
 }
 
 input CreateRubricInput {

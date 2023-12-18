@@ -27,7 +27,7 @@ extend type Query {
 extend type Mutation {
     createCategory(input: CreateCategoryInput @spread): Category @create
     updateCategory(input: UpdateCategoryInput @spread): Category @update
-    deleteCategory(id: UUID! @whereKey): Category @forceDelete
+    deleteCategory(id: UUID! @whereKey): Category @delete
 }
 
 input CreateCategoryInput {
