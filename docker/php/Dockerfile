@@ -17,5 +17,5 @@ COPY . /var/www
 USER www-data
 
 # Expose port 9000 and start php-fpm server
-EXPOSE 7797
+EXPOSE 9000
 CMD ["php-fpm"]
