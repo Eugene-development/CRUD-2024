@@ -5,11 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends RootModel
 {
-
+    use SoftDeletes;
     protected $table = 'product';
+
 
     public function property(): MorphMany
     {

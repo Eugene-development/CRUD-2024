@@ -20,6 +20,7 @@ type Product {
 extend type Query {
     product(orderBy: _ @orderBy(columns: ["created_at"])): [Product] @all
     product_one(slug: String! @eq, key: UUID! @eq): Product @find
+    productSoftDeletes: [Product] @all @softDeletes
 }
 
 extend type Mutation {
@@ -39,6 +40,8 @@ input CreateProductInput {
     price: CreatePriceMorphMany
     unit: CreateUnitMorphMany
     image: CreateImageMorphMany
+    seoTitle: CreateSeoTitleMorphOne
+    seoDescription: CreateSeoDescriptionMorphOne
 }
 
 input UpdateProductInput {
@@ -50,4 +53,6 @@ input UpdateProductInput {
     parentable_type: String
     parentable_id: UUID
     price: UpdatePriceMorphMany
+    seoTitle: UpdateSeoTitleMorphOne
+    seoDescription: UpdateSeoDescriptionMorphOne
 }
