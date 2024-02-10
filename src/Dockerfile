@@ -1,5 +1,5 @@
 # Используйте официальный образ PHP FPM
-FROM php:8.2-fpm-alpine
+FROM php:8.2-fpm-alpine3.18
 
 # Установите расширения PHP, которые требуются для Laravel
 RUN docker-php-ext-install pdo pdo_mysql
@@ -16,9 +16,12 @@ COPY . /var/www
 # Установите зависимости с помощью Composer
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
+# Создайте директорию для сертификатов SSL
+RUN mkdir -p /etc/ssl/certs
+
 # Копируйте сертификат SSL из вашего локального хранилища в контейнер
 # Убедитесь, что путь к вашему сертификату корректный
-COPY /root.crt /etc/ssl/certs/root.crt
+COPY root.crt /etc/ssl/certs/root.crt
 
 # Назначьте права на каталог приложения
 RUN chown -R www-data:www-data /var/www
