@@ -2,10 +2,10 @@ version: "3"
 services:
   #PHP Service
   app:
-    # image: larux/crud2024:250224v2
-    build:
-      context: .
-      dockerfile: ./docker/php/Dockerfile
+    image: larux/crud2024:030324
+    # build:
+    #   context: .
+    #   dockerfile: ./docker/php/Dockerfile
     container_name: "${COMPOSE_PROJECT_NAME}_PHP"
     restart: unless-stopped
     tty: true
