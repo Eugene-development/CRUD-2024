@@ -22,6 +22,8 @@ extend type Query {
     category(orderBy: _ @orderBy(columns: ["value"])): [Category]
         @all
         @eq(key: "parentable_type", value: "rubric")
+
+    category_one(slug: String! @eq, key: String! @eq): Category @find
 }
 
 extend type Mutation {
