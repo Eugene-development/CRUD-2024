@@ -23,8 +23,8 @@ class GzipMiddleware
         // return response($data);
 
         return response($data)->withHeaders([
-            'Access-Control-Allow-Origin' => '*',
-            'Access-Control-Allow-Methods' => 'POST',
+            // 'Access-Control-Allow-Origin' => '*',
+            // 'Access-Control-Allow-Methods' => 'POST',
             'Content-type' => 'application/json; charset=utf-8',
             'Content-Length' => strlen($data),
             'Content-Encoding' => 'gzip'

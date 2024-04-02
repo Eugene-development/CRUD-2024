@@ -10,16 +10,15 @@ type Product {
     unit: Unit @morphOne
     text: [Text] @morphMany
     tag: [Tag] @morphTo
-    image: Image @morphOne
+    image: [Image] @morphMany
     seoTitle: SeoTitle @morphOne
     seoDescription: SeoDescription @morphOne
-
     parentable: Parentable @morphTo
 }
 
 extend type Query {
     product(orderBy: _ @orderBy(columns: ["created_at"])): [Product] @all
-    product_one(slug: String! @eq, key: UUID! @eq): Product @find
+    product_one(slug: String! @eq, key: String! @eq): Product @find
     productSoftDeletes: [Product] @all @softDeletes
 }
 

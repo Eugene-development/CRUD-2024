@@ -1,6 +1,6 @@
 type Image {
     id: ID
-    key: String
+    key: String!
     active: Boolean
     hash: String
     alt: String
@@ -21,7 +21,6 @@ input CreateImageInput {
     alt: String!
 }
 
-# ???
 input CreateImageMorphMany {
-    create: CreateImageInput!
+    create: [CreateImageInput!]
 }
