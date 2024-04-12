@@ -8,7 +8,7 @@ type Product {
     updated_at: String
     price: Price @morphOne
     unit: Unit @morphOne
-    text: [Text] @morphMany
+    text: Text @MorphOne
     tag: [Tag] @morphTo
     image: [Image] @morphMany
     seoTitle: SeoTitle @morphOne
@@ -36,6 +36,7 @@ input CreateProductInput {
     slug: String
     parentable_type: String
     parentable_id: UUID!
+    text: CreateTextMorphOne
     price: CreatePriceMorphMany
     unit: CreateUnitMorphMany
     image: CreateImageMorphMany

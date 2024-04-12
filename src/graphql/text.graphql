@@ -1,10 +1,8 @@
 type Text {
-    id: UUID!
+    id: UUID
     key: UUID
-    active: Boolean
+    is_active: Boolean
     value: String
-    parentable_type: String
-    parentable_id: String
     parentable: Parentable @morphTo
 }
 
@@ -17,12 +15,10 @@ extend type Mutation {
 }
 
 input CreateTextInput {
-    id: UUID!
-    key: UUID!
+    key: UUID
     value: String!
-    slug: String
 }
 
-input CreateTextMorphMany {
-    create: [CreateTextInput!]
+input CreateTextMorphOne {
+    create: CreateTextInput
 }

@@ -28,9 +28,9 @@ class Product extends RootModel
         return $this->morphOne(Unit::class, 'parentable');
     }
 
-    public function text(): MorphMany
+    public function text(): MorphOne
     {
-        return $this->morphMany(Text::class, 'parentable');
+        return $this->MorphOne(Text::class, 'parentable');
     }
 
     public function image(): MorphMany
