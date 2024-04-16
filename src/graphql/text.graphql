@@ -12,6 +12,7 @@ extend type Query {
 
 extend type Mutation {
     createText(input: CreateTextInput @spread): Text @create
+    updateText(input: UpdateTextInput @spread): Text @update
 }
 
 input CreateTextInput {
@@ -19,6 +20,17 @@ input CreateTextInput {
     value: String!
 }
 
+input UpdateTextInput {
+    id: UUID
+    key: UUID
+    value: String!
+}
+
 input CreateTextMorphOne {
     create: CreateTextInput
 }
+
+input UpdateTextMorphOne {
+    update: UpdateTextInput
+}
+

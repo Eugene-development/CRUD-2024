@@ -52,6 +52,7 @@ input UpdateProductInput {
     slug: String
     parentable_type: String
     parentable_id: UUID
+    text: UpdateTextMorphOne
     price: UpdatePriceMorphMany
     seoTitle: UpdateSeoTitleMorphOne
     seoDescription: UpdateSeoDescriptionMorphOne
